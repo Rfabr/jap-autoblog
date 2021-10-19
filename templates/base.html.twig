@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <link rel="icon" href="{{ asset('picture/logo.png') }}">
+            <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                {% block nav %}
+                    <div class="container">
+                        <a class="navbar-brand text-white" href="{{ path('app_page_home') }}"><img src="{{ asset('picture/logo.png') }}" height="28" style="margin-right: 5px;">Jap' AutoBlog</a>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" aria-current="page" href="{{ path('app_page_add') }}">Add</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active text-white" href="{{ path('app_page_search') }}">Search</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                {% endblock %}
+            </nav>
+        
+            {% block content %}{% endblock %}
+
+        {% endblock %}
+    </body>
+</html>

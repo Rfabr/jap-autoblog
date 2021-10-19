@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jap' AutoBlog | Article{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template" style="padding-top: 25px">
+            <h1>Article</h1>
+            <p>{{ article.brand }}</p>
+        </div>
+    
+        <div class="card mb-3">
+            {% block article %}
+                <img src="{{ article.picture() }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.title() }}</h5>
+                    <p class="card-text">{{ article.contents() }}</p>
+                </div>
+            {% endblock %}
+        </div>
+
+        {% block form %}
+            <div class="d-flex justify-content-around">
+                <a href="{{ path('app_page_edit', {id: article.id}) }}" class="btn btn-dark col-sm-3" style="margin-bottom: 25px">Edit</a>
+                <a href="{{ path('app_page_delete', {id: article.id}) }}" class="btn btn-dark col-sm-3" style="margin-bottom: 25px">Delete</a>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

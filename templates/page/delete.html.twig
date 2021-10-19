@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jap' AutoBlog | Delete{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="starter-template" style="padding-top: 25px">
+            <h1>Delete</h1>
+            <p>Article {{ article.title }} is deleted.</p>
+            <a href="{{ path('app_page_home') }}" class="btn btn-dark col-sm-2" style="margin-bottom: 25px">Return to Homepage</a>
+        </div>
+    </div>
+{% endblock %}
